@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="store">
+
 <head>
-	<title>Angular app</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <title>Angular app</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
 </head>
+
 <body>
-<script type="text/javascript" src="angular.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <div ng-controller="StoreController as store">
+        <div ng-repeat="product in store.product">
+            <h1>{{store.product.name}}</h1>
+            <p>{{store.product.description}}</p>
+            <h3>
+        	<em class="pull-right">{{store.product.price}}</em>
+        	</h3>
+            <button ng-show="store.products.canPurchase">Add to Cart</button>
+        </div>
+
+    </div>
 </body>
+
 </html>
